@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
                 <div>
                   <p className="font-medium">Telefone</p>
                   <p className="text-gray-600">  {admin?.telefone ? formatPhoneNumber(admin.telefone) : "Carregando telefone..."}</p>
-                  <p className="text-gray-600"> Tel.empresa: (11) 3554-6419</p>
+                  <p className="text-gray-600"> (11) 3554-6419</p>
 
                 </div>
               </div>

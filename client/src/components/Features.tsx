@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ShieldCheck, ListChecks, CreditCard, Wrench, BookOpenCheck, HeadsetIcon } from 'lucide-react';
+import { ShieldCheck, ListChecks, CreditCard, Wrench, BookOpenCheck, HeadsetIcon, Settings } from 'lucide-react';
 
 interface Feature {
   icon: React.ElementType;
@@ -16,7 +16,7 @@ const Features: React.FC = () => {
       description: "Todos os nossos equipamentos possuem garantia superior ao mercado."
     },
     {
-      icon: ListChecks,
+      icon: Settings,
       title: "Retrofiting",
       description: "Oferecemos serviços de retrofiting atualizamos sua maquina usada"
     },
