@@ -6,9 +6,9 @@ import useProducts from '../hooks/useProducts';
 interface Product {
   _id: number;
   name: string;
-  condition: 'Novo' | 'Usado';
+  condition: 'Novo' | 'Usado'| 'Retrofitado';
   description: string;
-  images?: string[]; // Certifique-se de que os produtos contenham a propriedade images
+  images?: string[]; 
 }
 
 const Products: React.FC = () => {
@@ -16,6 +16,20 @@ const Products: React.FC = () => {
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const productRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Função para obter as classes CSS baseadas na condição do produto
+  const getConditionStyles = (condition: Product['condition']) => {
+    switch (condition) {
+      case 'Novo':
+        return 'bg-blue-500 text-white';
+      case 'Usado':
+        return 'bg-yellow-500 text-black';
+      case 'Retrofitado':
+        return 'bg-green-500 text-white';
+      default:
+        return 'bg-gray-500 text-white';
+    }
+  };
 
   useEffect(() => {
     fetchProducts(); // Buscar produtos ao carregar a página
@@ -101,9 +115,7 @@ const Products: React.FC = () => {
 
                 {/* Exibindo a condição com cores diferentes */}
                 <div
-                  className={`absolute top-4 left-4 px-2 py-1 rounded-md text-xs font-medium
-                    ${product.condition === 'Novo' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-black'}
-                  `}
+                  className={`absolute top-4 left-4 px-2 py-1 rounded-md text-xs font-medium ${getConditionStyles(product.condition)}`}
                 >
                   {product.condition}
                 </div>
