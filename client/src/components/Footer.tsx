@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold mb-6 relative inline-block after:content-[''] after:block after:w-10 after:h-1 after:bg-brand-yellow after:mt-2">Contato</h3>
             <ul className="space-y-3">
-              <li className="text-gray-400">Rua Dom Manuel O Venturos, 40 </li>
+              <li className="text-gray-400">Rua Dom Manuel O Venturoso, 40 </li>
               <li className="text-gray-400">03806-100 São Paulo</li>
               <li className="text-gray-400">{admin?.email || "Carregando..."}</li>
               <li className="text-gray-400"> {admin?.telefone ? formatPhoneNumber(admin.telefone) : "Carregando telefone..."}</li>

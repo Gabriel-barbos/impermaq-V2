@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <button onClick={() => handleScroll('home')} className="flex items-center space-x-1">
           <img src={Logo} className="h-10 w-auto" alt="Logo" />
-          <h1 className="text-xl font-bold">Impermaq</h1>
+          <h1 className="text-xl font-bold">Impermaq máquinas</h1>
         </button>
 
         {/* Desktop Nav */}

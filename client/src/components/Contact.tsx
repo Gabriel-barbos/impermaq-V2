@@ -98,6 +98,8 @@ const Contact: React.FC = () => {
                 <div>
                   <p className="font-medium">Telefone</p>
                   <p className="text-gray-600">  {admin?.telefone ? formatPhoneNumber(admin.telefone) : "Carregando telefone..."}</p>
+                  <p className="text-gray-600"> Tel.empresa: (11) 3554-6419</p>
+
                 </div>
               </div>
               
@@ -117,7 +119,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-medium">Endereço</p>
-                  <p className="text-gray-600">Rua Dom Manuel O Venturos, 40 - 03806-100 São Paulo</p>
+                  <p className="text-gray-600">Rua Dom Manuel O Venturoso, 40 - 03806-100 São Paulo</p>
                 </div>
               </div>
             </div>

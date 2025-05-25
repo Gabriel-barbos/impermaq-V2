@@ -17,8 +17,8 @@ const Features: React.FC = () => {
     },
     {
       icon: ListChecks,
-      title: "Manutenção Preventiva",
-      description: "Oferecemos serviços de manutenção preventiva"
+      title: "Retrofiting",
+      description: "Oferecemos serviços de retrofiting atualizamos sua maquina usada"
     },
     {
       icon: CreditCard,
@@ -32,8 +32,8 @@ const Features: React.FC = () => {
     },
     {
       icon: Wrench,
-      title: "Manutenção Corretiva",
-      description: "Oferecemos serviço de manutenção corretiva com rapideze eficiência"
+      title: "Peças de reposição",
+      description: "Produtos de qualidade para manter suas maquinas sempre funcionando"
     },
     {
       icon: HeadsetIcon,
