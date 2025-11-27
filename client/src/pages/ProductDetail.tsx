@@ -35,6 +35,26 @@ const ProductDetail: React.FC = () => {
     window.scrollTo(0, 0);
   }, [products, id]);
 
+  // Função para renderizar texto em bullet points
+  const renderBulletList = (texto: string) => {
+    if (!texto) return null;
+    
+    const itens = texto
+      .split('\n')
+      .map(item => item.trim())
+      .filter(item => item !== '');
+    
+    if (itens.length === 0) return null;
+    
+    return (
+      <ul className="list-disc list-inside space-y-2 text-gray-600">
+        {itens.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  };
+
   if (loading || error || !product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -45,16 +65,14 @@ const ProductDetail: React.FC = () => {
 
   const redirectToWhatsApp = () => {
     if (admin.telefone) {
-      const formattedPhone = admin.telefone.replace(/\D/g, ''); // Remove caracteres não numéricos
-      const message = `Olá, gostaria de obter o orçamento do ${encodeURIComponent(product.name)}.`; // Mensagem pré-pronta
+      const formattedPhone = admin.telefone.replace(/\D/g, '');
+      const message = `Olá, gostaria de obter o orçamento do ${encodeURIComponent(product.name)}.`;
       const url = `https://wa.me/${formattedPhone}?text=${message}`;
       window.open(url, '_blank');
     } else {
       alert('Número de telefone do administrador não disponível.');
     }
   };
-
-
 
   return (
     <div className="min-h-screen">
@@ -111,17 +129,18 @@ const ProductDetail: React.FC = () => {
         {/* Especificações e Acessórios */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           <div className="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
-            <div>
-              <h2 className="font-bold text-lg mb-2">Especificações</h2>
-              <p className="text-gray-600">{product.specifications}</p>
+            <Info size={32} className="text-brand-yellow flex-shrink-0" />
+            <div className="flex-1">
+              <h2 className="font-bold text-lg mb-4">Especificações</h2>
+              {renderBulletList(product.specifications)}
             </div>
           </div>
 
           <div className="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
-            <Wrench size={32} className="text-brand-yellow" />
-            <div>
-              <h2 className="font-bold text-lg mb-2">Acessórios</h2>
-              <p className="text-gray-600">{product.accessories}</p>
+            <Wrench size={32} className="text-brand-yellow flex-shrink-0" />
+            <div className="flex-1">
+              <h2 className="font-bold text-lg mb-4">Acessórios</h2>
+              {renderBulletList(product.accessories)}
             </div>
           </div>
         </div>
